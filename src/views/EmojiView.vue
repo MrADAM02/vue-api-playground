@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
+
+const props = defineProps<{ isDarkMode: boolean }>();
+const themeClass = computed(() => (props.isDarkMode ? "dark" : "light"));
 
 const emoji = ref("😀");
 const isLoading = ref(false);
@@ -72,7 +75,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="emoji-page">
+  <div :class="[themeClass, 'emoji-page']">
     <h2>Random Emoji</h2>
     <p>Fetch a fun emoji from the API, then copy it to your clipboard.</p>
 
@@ -109,6 +112,23 @@ onMounted(() => {
   align-items: center;
   gap: 16px;
   min-width: min(320px, 90vw);
+}
+
+.emoji-page.dark .emoji-card {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.emoji-page.light {
+  color: #0f172a;
+}
+
+.emoji-page.dark {
+  color: #f4f8fb;
+}
+
+.emoji-page.dark .emoji-actions button.secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f4f8fb;
 }
 
 .emoji-display {

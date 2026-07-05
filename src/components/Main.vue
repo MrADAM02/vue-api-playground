@@ -2,17 +2,18 @@
 import { computed, ref } from "vue";
 import { programmingQuotes } from "@/data/programmingQuotes";
 
+const props = defineProps<{ isDarkMode: boolean }>();
+
 const initialQuote = programmingQuotes[0] ?? {
   quote: "Keep coding.",
   author: "Developer",
 };
 const quote = ref(initialQuote.quote);
 const author = ref(initialQuote.author);
-const isDarkMode = ref(false);
 const isTransitioning = ref(false);
 const copied = ref(false);
 
-const themeClass = computed(() => (isDarkMode.value ? "dark" : "light"));
+const themeClass = computed(() => (props.isDarkMode ? "dark" : "light"));
 
 const generateQuote = () => {
   isTransitioning.value = true;
@@ -25,10 +26,6 @@ const generateQuote = () => {
     author.value = selectedQuote.author;
     isTransitioning.value = false;
   }, 180);
-};
-
-const toggleTheme = () => {
-  isDarkMode.value = !isDarkMode.value;
 };
 
 const copyQuote = async () => {
@@ -52,9 +49,6 @@ generateQuote();
   <main :class="themeClass">
     <div class="top-row">
       <div class="badge">Developer Inspiration</div>
-      <button class="theme-btn" @click="toggleTheme">
-        {{ isDarkMode ? "☀️ Light" : "🌙 Dark" }}
-      </button>
     </div>
     <section>
       <p :class="{ transitioning: isTransitioning }">{{ quote }}</p>

@@ -1,6 +1,9 @@
 import { computed } from "vue";
 import { useRoute, RouterLink } from "vue-router";
+const props = defineProps();
+const emit = defineEmits();
 const route = useRoute();
+const toggleTheme = () => emit('toggle-theme');
 const pageTitles = {
     "/": "Quote generator",
     "/emoji": "Emoji generator",
@@ -12,6 +15,9 @@ const navItems = [
 ];
 const isActive = (path) => route.path === path;
 const __VLS_ctx = {
+    ...{},
+    ...{},
+    ...{},
     ...{},
     ...{},
 };
@@ -70,7 +76,16 @@ for (const [item] of __VLS_vFor((__VLS_ctx.navItems))) {
     // @ts-ignore
     [];
 }
+__VLS_asFunctionalElement1(__VLS_intrinsics.button, __VLS_intrinsics.button)({
+    ...{ onClick: (__VLS_ctx.toggleTheme) },
+    ...{ class: "theme-toggle" },
+});
+/** @type {__VLS_StyleScopedClasses['theme-toggle']} */ ;
+(props.isDarkMode ? "☀️ Light" : "🌙 Dark");
 // @ts-ignore
-[];
-const __VLS_export = (await import('vue')).defineComponent({});
+[toggleTheme,];
+const __VLS_export = (await import('vue')).defineComponent({
+    __typeEmits: {},
+    __typeProps: {},
+});
 export default {};

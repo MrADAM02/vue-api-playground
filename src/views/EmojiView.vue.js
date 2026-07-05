@@ -1,4 +1,6 @@
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
+const props = defineProps();
+const themeClass = computed(() => (props.isDarkMode ? "dark" : "light"));
 const emoji = ref("😀");
 const isLoading = ref(false);
 const copyMessage = ref("Copy emoji");
@@ -66,17 +68,28 @@ onMounted(() => {
 const __VLS_ctx = {
     ...{},
     ...{},
+    ...{},
+    ...{},
 };
 let __VLS_components;
 let __VLS_intrinsics;
 let __VLS_directives;
+/** @type {__VLS_StyleScopedClasses['emoji-page']} */ ;
+/** @type {__VLS_StyleScopedClasses['emoji-card']} */ ;
+/** @type {__VLS_StyleScopedClasses['emoji-page']} */ ;
+/** @type {__VLS_StyleScopedClasses['emoji-page']} */ ;
+/** @type {__VLS_StyleScopedClasses['dark']} */ ;
+/** @type {__VLS_StyleScopedClasses['emoji-page']} */ ;
+/** @type {__VLS_StyleScopedClasses['dark']} */ ;
 /** @type {__VLS_StyleScopedClasses['emoji-display']} */ ;
 /** @type {__VLS_StyleScopedClasses['emoji-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['emoji-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['emoji-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['emoji-actions']} */ ;
+/** @type {__VLS_StyleScopedClasses['emoji-actions']} */ ;
+/** @type {__VLS_StyleScopedClasses['secondary']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-    ...{ class: "emoji-page" },
+    ...{ class: ([__VLS_ctx.themeClass, 'emoji-page']) },
 });
 /** @type {__VLS_StyleScopedClasses['emoji-page']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.h2, __VLS_intrinsics.h2)({});
@@ -114,6 +127,8 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.button, __VLS_intrinsics.button)({
 /** @type {__VLS_StyleScopedClasses['primary']} */ ;
 (__VLS_ctx.copyMessage);
 // @ts-ignore
-[isLoading, emoji, fetchRandomEmoji, copyEmoji, copyMessage,];
-const __VLS_export = (await import('vue')).defineComponent({});
+[themeClass, isLoading, emoji, fetchRandomEmoji, copyEmoji, copyMessage,];
+const __VLS_export = (await import('vue')).defineComponent({
+    __typeProps: {},
+});
 export default {};

@@ -2,7 +2,13 @@
 import { computed } from "vue";
 import { useRoute, RouterLink } from "vue-router";
 
+const props = defineProps<{ isDarkMode: boolean }>();
+const emit = defineEmits<{
+  (event: "toggle-theme"): void;
+}>();
 const route = useRoute();
+
+const toggleTheme = () => emit("toggle-theme");
 
 const pageTitles: Record<string, string> = {
   "/": "Quote generator",
@@ -39,6 +45,10 @@ const isActive = (path: string) => route.path === path;
         {{ item.label }}
       </RouterLink>
     </nav>
+
+    <button class="theme-toggle" @click="toggleTheme">
+      {{ props.isDarkMode ? "☀️ Light" : "🌙 Dark" }}
+    </button>
   </header>
 </template>
 
