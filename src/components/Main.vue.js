@@ -43,11 +43,10 @@ const __VLS_ctx = {
 let __VLS_components;
 let __VLS_intrinsics;
 let __VLS_directives;
-/** @type {__VLS_StyleScopedClasses['theme-btn']} */ ;
+/** @type {__VLS_StyleScopedClasses['dark']} */ ;
 /** @type {__VLS_StyleScopedClasses['dark']} */ ;
 /** @type {__VLS_StyleScopedClasses['secondary-btn']} */ ;
 /** @type {__VLS_StyleScopedClasses['dark']} */ ;
-/** @type {__VLS_StyleScopedClasses['theme-btn']} */ ;
 /** @type {__VLS_StyleScopedClasses['dark']} */ ;
 /** @type {__VLS_StyleScopedClasses['secondary-btn']} */ ;
 /** @type {__VLS_StyleScopedClasses['top-row']} */ ;

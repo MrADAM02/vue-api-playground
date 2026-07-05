@@ -22,12 +22,15 @@ const href = ref("https://github.com/MrADAM02");
 
 <style scoped>
 footer {
-  position: fixed;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
   margin: 0 auto;
+  padding: 18px 0 12px;
   text-align: center;
   color: #cdd6d9;
-  padding-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 span {
@@ -35,6 +38,14 @@ span {
 }
 
 a {
-  color: white;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  footer {
+    padding-bottom: 14px;
+    font-size: 0.9rem;
+  }
 }
 </style>

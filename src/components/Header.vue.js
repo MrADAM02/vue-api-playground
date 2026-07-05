@@ -3,7 +3,7 @@ import { useRoute, RouterLink } from "vue-router";
 const props = defineProps();
 const emit = defineEmits();
 const route = useRoute();
-const toggleTheme = () => emit('toggle-theme');
+const toggleTheme = () => emit("toggle-theme");
 const pageTitles = {
     "/": "Quote generator",
     "/emoji": "Emoji generator",
@@ -26,9 +26,11 @@ let __VLS_intrinsics;
 let __VLS_directives;
 /** @type {__VLS_StyleScopedClasses['nav-link']} */ ;
 /** @type {__VLS_StyleScopedClasses['nav-link']} */ ;
+/** @type {__VLS_StyleScopedClasses['theme-toggle']} */ ;
 /** @type {__VLS_StyleScopedClasses['topbar']} */ ;
+/** @type {__VLS_StyleScopedClasses['nav-group']} */ ;
 /** @type {__VLS_StyleScopedClasses['nav-links']} */ ;
-/** @type {__VLS_StyleScopedClasses['nav-link']} */ ;
+/** @type {__VLS_StyleScopedClasses['theme-toggle']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.header, __VLS_intrinsics.header)({
     ...{ class: "topbar" },
 });
@@ -41,9 +43,20 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
     ...{ class: "brand-mark" },
 });
 /** @type {__VLS_StyleScopedClasses['brand-mark']} */ ;
-__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({});
+__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+    ...{ class: "brand-details" },
+});
+/** @type {__VLS_StyleScopedClasses['brand-details']} */ ;
+__VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({
+    ...{ class: "eyebrow" },
+});
+/** @type {__VLS_StyleScopedClasses['eyebrow']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.h1, __VLS_intrinsics.h1)({});
 (__VLS_ctx.title);
+__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+    ...{ class: "nav-group" },
+});
+/** @type {__VLS_StyleScopedClasses['nav-group']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.nav, __VLS_intrinsics.nav)({
     ...{ class: "nav-links" },
     'aria-label': "Primary",

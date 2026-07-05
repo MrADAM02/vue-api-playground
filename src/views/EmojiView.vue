@@ -95,23 +95,47 @@ onMounted(() => {
 
 <style scoped>
 .emoji-page {
+  width: 100%;
+  max-width: 640px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  color: #f4f8fb;
+  gap: 18px;
+  padding: 28px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 28px 80px rgba(8, 15, 28, 0.12);
   text-align: center;
 }
 
+.emoji-page.dark {
+  background: rgba(6, 12, 28, 0.8);
+}
+
+.emoji-page.light {
+  color: #102a43;
+}
+
+.emoji-page.dark {
+  color: #f4f8fb;
+}
+
 .emoji-card {
-  background: rgba(255, 255, 255, 0.16);
-  padding: 24px;
-  border-radius: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 28px;
+  border-radius: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 22px;
   min-width: min(320px, 90vw);
+  border: 1px solid rgba(51, 65, 85, 0.08);
+}
+
+.emoji-page.dark .emoji-card {
+  background: rgba(15, 23, 42, 0.92);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .emoji-page.dark .emoji-card {
@@ -132,8 +156,9 @@ onMounted(() => {
 }
 
 .emoji-display {
-  font-size: 4rem;
-  min-height: 4.5rem;
+  font-size: clamp(4rem, 8vw, 6.5rem);
+  min-height: 5rem;
+  letter-spacing: 0.02em;
   transition: transform 0.2s ease;
 }
 
@@ -168,12 +193,16 @@ onMounted(() => {
 }
 
 .emoji-actions button.primary {
-  background: #38bdf8;
-  color: #0f172a;
+  background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+  color: white;
 }
 
 .emoji-actions button.secondary {
-  background: rgba(255, 255, 255, 0.18);
-  color: #f4f8fb;
+  background: rgba(15, 23, 42, 0.12);
+  color: inherit;
+}
+
+.emoji-actions button.secondary:hover {
+  background: rgba(15, 23, 42, 0.18);
 }
 </style>

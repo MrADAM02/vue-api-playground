@@ -32,24 +32,49 @@ const toggleTheme = () => {
 <style scoped>
 .app-shell {
   width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 0 24px;
+  padding: 10px 0 30px;
 }
+
 .light-theme {
-  background: linear-gradient(180deg, #e9f2f7 0%, #d4e5ec 100%);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(56, 189, 248, 0.18),
+      transparent 24%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(59, 130, 246, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(180deg, #e9f2f7 0%, #d4e5ec 100%);
   color: #0f172a;
 }
 
 .dark-theme {
-  background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(56, 189, 248, 0.2),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(99, 102, 241, 0.16),
+      transparent 24%
+    ),
+    linear-gradient(180deg, #0f172a 0%, #111827 100%);
   color: #f8fafc;
 }
 
 .light-theme,
 .dark-theme {
   min-height: 100vh;
-  padding: 24px 16px 32px;
+  padding: 24px 16px 40px;
 }
 </style>

@@ -69,27 +69,29 @@ generateQuote();
 main {
   width: 100%;
   max-width: 760px;
-  border-radius: 24px;
-  padding: 32px;
+  border-radius: 32px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
-  border: 1px solid rgba(64, 100, 115, 0.15);
+  gap: 24px;
+  box-shadow: 0 28px 80px rgba(8, 15, 28, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
   transition:
     background 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    border 0.3s ease;
 }
 
 main.light {
-  background: linear-gradient(135deg, #f4f8fb 0%, #dbe7eb 100%);
-  color: #23353b;
+  background: rgba(255, 255, 255, 0.85);
+  color: #102a43;
 }
 
 main.dark {
-  background: linear-gradient(135deg, #17252b 0%, #23353b 100%);
-  color: #f4f8fb;
+  background: rgba(8, 18, 35, 0.86);
+  color: #f8fafc;
 }
 
 .top-row {
@@ -101,27 +103,23 @@ main.dark {
 }
 
 .badge {
-  background: #406473;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
   color: white;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.theme-btn,
 .secondary-btn {
   border: 0;
-  padding: 8px 12px;
+  padding: 12px 18px;
   border-radius: 999px;
   cursor: pointer;
-  font-weight: 600;
-}
-
-.theme-btn {
-  background: rgba(64, 100, 115, 0.12);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
   color: inherit;
 }
 
@@ -130,15 +128,22 @@ section {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-bottom: 8px;
-  min-height: 140px;
+  padding: 28px 26px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+  min-height: 180px;
   justify-content: center;
+}
+
+main.dark section {
+  background: rgba(15, 23, 42, 0.7);
 }
 
 p {
   font-weight: 700;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
   line-height: 1.7;
   text-align: center;
   color: inherit;
@@ -197,23 +202,25 @@ small {
 }
 
 button {
-  background: linear-gradient(135deg, #406473 0%, #2f5160 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
   color: white;
   border: 0;
-  padding: 10px 18px;
+  padding: 14px 22px;
   font-size: 1rem;
   border-radius: 999px;
   font-weight: 700;
   cursor: pointer;
+  letter-spacing: 0.01em;
   transition:
     transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
-  box-shadow: 0 8px 18px rgba(64, 100, 115, 0.25);
+    box-shadow 0.2s ease-in-out,
+    opacity 0.2s ease;
+  box-shadow: 0 16px 34px rgba(56, 189, 248, 0.22);
 }
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(64, 100, 115, 0.3);
+  box-shadow: 0 18px 36px rgba(56, 189, 248, 0.28);
 }
 
 main.dark .theme-btn,
@@ -221,10 +228,10 @@ main.dark .secondary-btn {
   background: rgba(255, 255, 255, 0.12);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   main {
-    padding: 20px;
-    border-radius: 18px;
+    padding: 24px;
+    border-radius: 24px;
   }
 
   .top-row {
