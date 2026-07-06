@@ -1,6 +1,9 @@
 import { useRouter } from "vue-router";
+import Main from "@/components/Main.vue";
 const router = useRouter();
+const props = defineProps();
 const __VLS_ctx = {
+    ...{},
     ...{},
     ...{},
 };
@@ -13,27 +16,15 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
 /** @type {__VLS_StyleScopedClasses['page']} */ ;
 __VLS_asFunctionalElement1(__VLS_intrinsics.h2, __VLS_intrinsics.h2)({});
 __VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({});
-__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-    ...{ class: "actions" },
-});
-/** @type {__VLS_StyleScopedClasses['actions']} */ ;
-__VLS_asFunctionalElement1(__VLS_intrinsics.button, __VLS_intrinsics.button)({
-    ...{ onClick: (...[$event]) => {
-            return __VLS_ctx.router.push('/emoji');
-            // @ts-ignore
-            [router,];
-        } },
-});
-__VLS_asFunctionalElement1(__VLS_intrinsics.button, __VLS_intrinsics.button)({
-    ...{ onClick: (...[$event]) => {
-            return __VLS_ctx.router.push('/');
-            // @ts-ignore
-            [router,];
-        } },
-    ...{ class: "secondary" },
-});
-/** @type {__VLS_StyleScopedClasses['secondary']} */ ;
+const __VLS_0 = Main;
 // @ts-ignore
-[];
-const __VLS_export = (await import('vue')).defineComponent({});
+const __VLS_1 = __VLS_asFunctionalComponent1(__VLS_0, new __VLS_0({
+    isDarkMode: (props.isDarkMode),
+}));
+const __VLS_2 = __VLS_1({
+    isDarkMode: (props.isDarkMode),
+}, ...__VLS_functionalComponentArgsRest(__VLS_1));
+const __VLS_export = (await import('vue')).defineComponent({
+    __typeProps: {},
+});
 export default {};

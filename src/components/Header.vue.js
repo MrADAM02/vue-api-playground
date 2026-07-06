@@ -7,11 +7,13 @@ const toggleTheme = () => emit("toggle-theme");
 const pageTitles = {
     "/": "Quote generator",
     "/emoji": "Emoji generator",
+    "/logo": "Logo generator",
 };
 const title = computed(() => pageTitles[route.path] ?? "App generator");
 const navItems = [
     { label: "Quotes", to: "/" },
     { label: "Emoji", to: "/emoji" },
+    { label: "Logos", to: "/logo" },
 ];
 const isActive = (path) => route.path === path;
 const __VLS_ctx = {

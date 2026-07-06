@@ -1,19 +1,17 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
+import Main from "@/components/Main.vue";
 
 const router = useRouter();
+const props = defineProps<{ isDarkMode: boolean }>();
 </script>
 
 <template>
   <div class="page">
     <h2>Quote Generator</h2>
     <p>Explore programming quotes and discover fun emoji inspiration.</p>
-    <div class="actions">
-      <button @click="router.push('/emoji')">Open Emoji Page</button>
-      <button class="secondary" @click="router.push('/')">
-        Stay on Quotes
-      </button>
-    </div>
+
+    <Main :is-dark-mode="props.isDarkMode" />
   </div>
 </template>
 

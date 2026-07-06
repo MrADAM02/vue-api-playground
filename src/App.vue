@@ -20,10 +20,9 @@ const toggleTheme = () => {
   <div :class="themeClass">
     <Header :isDarkMode="isDarkMode" @toggle-theme="toggleTheme" />
     <main class="app-shell">
-      <RouterView v-if="route.path === '/emoji'" v-slot="{ Component }">
+      <RouterView v-slot="{ Component }">
         <component :is="Component" :is-dark-mode="isDarkMode" />
       </RouterView>
-      <Main v-else :is-dark-mode="isDarkMode" />
     </main>
     <Footer />
   </div>
