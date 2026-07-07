@@ -49,7 +49,12 @@ onMounted(fetchRandomLogo);
 
     <div class="logo-card">
       <div class="logo-preview">
-        <div v-if="isLoading" class="placeholder">Loading...</div>
+        <div v-if="isLoading" class="skeleton-card" aria-hidden="true">
+          <div class="skeleton-line short"></div>
+          <div class="skeleton-shape"></div>
+          <div class="skeleton-line"></div>
+          <div class="skeleton-line"></div>
+        </div>
         <img v-else-if="logo" :src="logo" :alt="name" />
         <div v-else class="placeholder">No logo</div>
       </div>
@@ -104,6 +109,46 @@ onMounted(fetchRandomLogo);
 .placeholder {
   padding: 48px 20px;
   color: #667;
+}
+
+.skeleton-card {
+  width: min(320px, 100%);
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease infinite;
+}
+
+.skeleton-line,
+.skeleton-shape {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+.skeleton-line {
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+.skeleton-line.short {
+  width: 45%;
+  margin-bottom: 14px;
+}
+
+.skeleton-shape {
+  width: 100%;
+  height: 72px;
+  margin: 12px 0 14px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
 .logo-meta {
   max-width: 640px;

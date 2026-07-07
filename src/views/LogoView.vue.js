@@ -46,6 +46,9 @@ const __VLS_ctx = {
 let __VLS_components;
 let __VLS_intrinsics;
 let __VLS_directives;
+/** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
+/** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
+/** @type {__VLS_StyleScopedClasses['skeleton-shape']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-card']} */ ;
@@ -69,9 +72,27 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
 /** @type {__VLS_StyleScopedClasses['logo-preview']} */ ;
 if (__VLS_ctx.isLoading) {
     __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-        ...{ class: "placeholder" },
+        ...{ class: "skeleton-card" },
+        'aria-hidden': "true",
     });
-    /** @type {__VLS_StyleScopedClasses['placeholder']} */ ;
+    /** @type {__VLS_StyleScopedClasses['skeleton-card']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-line short" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
+    /** @type {__VLS_StyleScopedClasses['short']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-shape" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-shape']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-line" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-line" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
 }
 else if (__VLS_ctx.logo) {
     __VLS_asFunctionalElement1(__VLS_intrinsics.img)({
