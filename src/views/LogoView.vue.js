@@ -46,9 +46,10 @@ const __VLS_ctx = {
 let __VLS_components;
 let __VLS_intrinsics;
 let __VLS_directives;
+/** @type {__VLS_StyleScopedClasses['skeleton-badge']} */ ;
+/** @type {__VLS_StyleScopedClasses['skeleton-ring']} */ ;
 /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
 /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
-/** @type {__VLS_StyleScopedClasses['skeleton-shape']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-actions']} */ ;
 /** @type {__VLS_StyleScopedClasses['logo-card']} */ ;
@@ -77,22 +78,35 @@ if (__VLS_ctx.isLoading) {
     });
     /** @type {__VLS_StyleScopedClasses['skeleton-card']} */ ;
     __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-graphic" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-graphic']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-badge" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-badge']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-ring" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-ring']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "skeleton-bars" },
+    });
+    /** @type {__VLS_StyleScopedClasses['skeleton-bars']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
         ...{ class: "skeleton-line short" },
     });
     /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
     /** @type {__VLS_StyleScopedClasses['short']} */ ;
     __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-        ...{ class: "skeleton-shape" },
-    });
-    /** @type {__VLS_StyleScopedClasses['skeleton-shape']} */ ;
-    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
         ...{ class: "skeleton-line" },
     });
     /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
     __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-        ...{ class: "skeleton-line" },
+        ...{ class: "skeleton-line narrow" },
     });
     /** @type {__VLS_StyleScopedClasses['skeleton-line']} */ ;
+    /** @type {__VLS_StyleScopedClasses['narrow']} */ ;
 }
 else if (__VLS_ctx.logo) {
     __VLS_asFunctionalElement1(__VLS_intrinsics.img)({
@@ -106,25 +120,48 @@ else {
     });
     /** @type {__VLS_StyleScopedClasses['placeholder']} */ ;
 }
-__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-    ...{ class: "logo-meta" },
-});
-/** @type {__VLS_StyleScopedClasses['logo-meta']} */ ;
-__VLS_asFunctionalElement1(__VLS_intrinsics.strong, __VLS_intrinsics.strong)({
-    ...{ class: "brand-name" },
-});
-/** @type {__VLS_StyleScopedClasses['brand-name']} */ ;
-(__VLS_ctx.name);
-__VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
-    ...{ class: "brand-title" },
-});
-/** @type {__VLS_StyleScopedClasses['brand-title']} */ ;
-(__VLS_ctx.title);
-__VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({
-    ...{ class: "brand-desc" },
-});
-/** @type {__VLS_StyleScopedClasses['brand-desc']} */ ;
-(__VLS_ctx.description);
+if (__VLS_ctx.isLoading) {
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "logo-meta" },
+    });
+    /** @type {__VLS_StyleScopedClasses['logo-meta']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "meta-skeleton meta-name" },
+    });
+    /** @type {__VLS_StyleScopedClasses['meta-skeleton']} */ ;
+    /** @type {__VLS_StyleScopedClasses['meta-name']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "meta-skeleton meta-title" },
+    });
+    /** @type {__VLS_StyleScopedClasses['meta-skeleton']} */ ;
+    /** @type {__VLS_StyleScopedClasses['meta-title']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "meta-skeleton meta-desc" },
+    });
+    /** @type {__VLS_StyleScopedClasses['meta-skeleton']} */ ;
+    /** @type {__VLS_StyleScopedClasses['meta-desc']} */ ;
+}
+else {
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "logo-meta" },
+    });
+    /** @type {__VLS_StyleScopedClasses['logo-meta']} */ ;
+    __VLS_asFunctionalElement1(__VLS_intrinsics.strong, __VLS_intrinsics.strong)({
+        ...{ class: "brand-name" },
+    });
+    /** @type {__VLS_StyleScopedClasses['brand-name']} */ ;
+    (__VLS_ctx.name);
+    __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
+        ...{ class: "brand-title" },
+    });
+    /** @type {__VLS_StyleScopedClasses['brand-title']} */ ;
+    (__VLS_ctx.title);
+    __VLS_asFunctionalElement1(__VLS_intrinsics.p, __VLS_intrinsics.p)({
+        ...{ class: "brand-desc" },
+    });
+    /** @type {__VLS_StyleScopedClasses['brand-desc']} */ ;
+    (__VLS_ctx.description);
+}
 __VLS_asFunctionalElement1(__VLS_intrinsics.div, __VLS_intrinsics.div)({
     ...{ class: "logo-actions" },
 });
@@ -148,6 +185,6 @@ __VLS_asFunctionalElement1(__VLS_intrinsics.button, __VLS_intrinsics.button)({
 /** @type {__VLS_StyleScopedClasses['primary']} */ ;
 (__VLS_ctx.copyMessage);
 // @ts-ignore
-[isLoading, logo, logo, logo, name, name, title, description, fetchRandomLogo, copyUrl, copyMessage,];
+[isLoading, isLoading, logo, logo, logo, name, name, title, description, fetchRandomLogo, copyUrl, copyMessage,];
 const __VLS_export = (await import('vue')).defineComponent({});
 export default {};

@@ -50,16 +50,26 @@ onMounted(fetchRandomLogo);
     <div class="logo-card">
       <div class="logo-preview">
         <div v-if="isLoading" class="skeleton-card" aria-hidden="true">
-          <div class="skeleton-line short"></div>
-          <div class="skeleton-shape"></div>
-          <div class="skeleton-line"></div>
-          <div class="skeleton-line"></div>
+          <div class="skeleton-graphic">
+            <div class="skeleton-badge"></div>
+            <div class="skeleton-ring"></div>
+          </div>
+          <div class="skeleton-bars">
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line narrow"></div>
+          </div>
         </div>
         <img v-else-if="logo" :src="logo" :alt="name" />
         <div v-else class="placeholder">No logo</div>
       </div>
 
-      <div class="logo-meta">
+      <div class="logo-meta" v-if="isLoading">
+        <div class="meta-skeleton meta-name"></div>
+        <div class="meta-skeleton meta-title"></div>
+        <div class="meta-skeleton meta-desc"></div>
+      </div>
+      <div v-else class="logo-meta">
         <strong class="brand-name">{{ name }}</strong>
         <div class="brand-title">{{ title }}</div>
         <p class="brand-desc">{{ description }}</p>
@@ -114,32 +124,73 @@ onMounted(fetchRandomLogo);
 .skeleton-card {
   width: min(320px, 100%);
   padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.skeleton-graphic {
+  width: min(260px, 100%);
+  height: 92px;
   border-radius: 20px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-badge,
+.skeleton-ring {
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.35);
+}
+
+.skeleton-badge {
+  width: 56px;
+  height: 56px;
+  top: 18px;
+  left: 24px;
+}
+
+.skeleton-ring {
+  width: 116px;
+  height: 116px;
+  right: -18px;
+  top: -12px;
+  opacity: 0.7;
+}
+
+.skeleton-bars {
+  width: min(260px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.skeleton-line {
+  height: 10px;
+  width: 82%;
+  border-radius: 999px;
   background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
   background-size: 400% 100%;
   animation: shimmer 1.2s ease infinite;
 }
 
-.skeleton-line,
-.skeleton-shape {
-  border-radius: 999px;
-  background: rgba(148, 163, 184, 0.35);
-}
-
-.skeleton-line {
-  height: 10px;
-  margin-bottom: 10px;
-}
-
 .skeleton-line.short {
-  width: 45%;
-  margin-bottom: 14px;
+  width: 52%;
 }
 
-.skeleton-shape {
-  width: 100%;
-  height: 72px;
-  margin: 12px 0 14px;
+.skeleton-line.narrow {
+  width: 66%;
+  height: 8px;
 }
 
 @keyframes shimmer {
@@ -152,7 +203,36 @@ onMounted(fetchRandomLogo);
 }
 .logo-meta {
   max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
+
+.meta-skeleton {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s ease infinite;
+}
+
+.meta-name {
+  width: 54%;
+  height: 12px;
+}
+
+.meta-title {
+  width: 42%;
+  height: 10px;
+}
+
+.meta-desc {
+  width: 72%;
+  height: 10px;
+}
+
 .brand-name {
   display: block;
   font-size: 1.05rem;

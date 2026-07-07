@@ -22,7 +22,7 @@ const props = defineProps<{ isDarkMode: boolean }>();
   align-items: center;
   gap: 12px;
   text-align: center;
-  color: #f4f8fb;
+  color: #367aae;
 }
 
 .actions {
