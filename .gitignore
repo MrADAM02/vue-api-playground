@@ -28,6 +28,12 @@ coverage
 
 .eslintcache
 
+# Stray compiled JS output alongside TS/Vue sources
+src/**/*.vue.js
+src/main.js
+src/router/index.js
+src/data/*.js
+
 # Cypress
 /cypress/videos/
 /cypress/screenshots/
