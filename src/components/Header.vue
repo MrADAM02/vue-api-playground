@@ -178,7 +178,13 @@ h1 {
   }
 
   .nav-links {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .nav-link {
+    text-align: center;
   }
 
   .theme-toggle {

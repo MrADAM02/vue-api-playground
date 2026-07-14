@@ -158,6 +158,8 @@ onMounted(() => {
 .recipe-image {
   width: 100%;
   max-width: 420px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 20px;
   display: block;
 }
@@ -233,7 +235,7 @@ onMounted(() => {
 .skeleton-image {
   width: 100%;
   max-width: 420px;
-  height: 220px;
+  aspect-ratio: 4 / 3;
   border-radius: 20px;
   background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 37%, #e2e8f0 63%);
   background-size: 400% 100%;
