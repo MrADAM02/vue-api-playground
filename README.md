@@ -4,9 +4,10 @@ A small Vue 3 + TypeScript playground app for practicing Vue fundamentals and wo
 
 ## Pages
 
-- **Home** (`/`) — landing page
-- **Emoji** (`/emoji`) — emoji browsing/demo page
-- **Logo** (`/logo`) — logo demo page
+- **Home** (`/`) — landing page linking to each feature
+- **Quotes** (`/quotes`) — programming quote generator
+- **Emoji** (`/emoji`) — random emoji generator
+- **Logo** (`/logo`) — random logo generator
 - **Recipe** (`/recipe`) — random recipe viewer using the [DummyJSON](https://dummyjson.com/) recipes API
 
 ## Tech Stack

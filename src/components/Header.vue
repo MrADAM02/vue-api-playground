@@ -11,7 +11,8 @@ const route = useRoute();
 const toggleTheme = () => emit("toggle-theme");
 
 const pageTitles: Record<string, string> = {
-  "/": "Quote generator",
+  "/": "Home",
+  "/quotes": "Quote generator",
   "/emoji": "Emoji generator",
   "/logo": "Logo generator",
   "/recipe": "Recipe generator",
@@ -20,7 +21,8 @@ const pageTitles: Record<string, string> = {
 const title = computed(() => pageTitles[route.path] ?? "App generator");
 
 const navItems = [
-  { label: "Quotes", to: "/" },
+  { label: "Home", to: "/" },
+  { label: "Quotes", to: "/quotes" },
   { label: "Emoji", to: "/emoji" },
   { label: "Logos", to: "/logo" },
   { label: "Recipes", to: "/recipe" },
